@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: loud-win-zone-gemini-ai-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: TELEGRAM_GROUP_ID
+        sync: false
